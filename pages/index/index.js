@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-
+var app = getApp();
 Page
 ({
   search:function(e)
@@ -8,14 +8,27 @@ Page
     console.log('search:' + e.detail.value);
   },
 
-  onReady: function (e) {
-    // 使用 wx.createAudioContext 获取 audio 上下文 context
-    this.audioCtx = wx.createAudioContext('audio');
+  toRankPage:function()
+  {
+    wx.navigateTo
+    ({
+      url: "../rank/rank?=rank",
+   })
+  },
+
+  toUploadPage:function()
+  {
+
+  },
+
+  toListPage:function()
+  {
+
   },
 
   audioPlay:function()
   {
-    this.audioCtx.play();
+    app.play();
   }
   
 })

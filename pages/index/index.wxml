@@ -5,11 +5,11 @@
 
   <view class='buttom'>
     <view style="flex-direction:row;">
-      <image mode='aspectFill' src='../../resources/rank.png' class='rowImage'></image>
+      <image  class='rowImage'mode='scaleToFill' src='../../resources/rank.png' bindtap='toRankPage'></image>
 
-      <image mode='scaleToFill' src='../../resources/upload.png' class='rowImage'></image>
+      <image class='rowImage'mode='scaleToFill' src='../../resources/upload.png'bindtap='toUploadPage' ></image>
 
-      <image mode='scaleToFill' src='../../resources/list.png' class='rowImage'></image>
+      <image class='rowImage'mode='scaleToFill' src='../../resources/list.png' bindtap='toListPage'></image>
     </view>
 
     <view  style="flex-direction:row;">
@@ -36,12 +36,12 @@
       </scroll-view>
   </view>
 
-  <view>
-    <audio 
-     id="audio" src='http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'></audio>
-    <button  bindtap="audioPlay">播放</button>
-    
-  <navigator url="../play/play?=play" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator>
+  <view class='bottom'>
+    <text class='name'>歌名</text>
+    <view >
+      <image class='play' src='../../resources/play.png'></image>
+      <image class='next' src='../../resources/next.png'></image>
+    </view>
   </view>
     
 </view>
