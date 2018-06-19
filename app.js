@@ -1,4 +1,11 @@
 //app.js
+const worker = wx.createWorker('workers/request/index.js');
+
+worker.onMessage(function (msg) {
+
+
+})
+
 App
 ({
   onLaunch: function () 

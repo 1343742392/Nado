@@ -1,13 +1,47 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='background'>.
+  <view class='head'>
+        <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class='buttom'>
+    <view style="flex-direction:row;">
+      <image mode='aspectFill' src='../../resources/rank.png' class='rowImage'></image>
+
+      <image mode='scaleToFill' src='../../resources/upload.png' class='rowImage'></image>
+
+      <image mode='scaleToFill' src='../../resources/list.png' class='rowImage'></image>
+    </view>
+
+    <view  style="flex-direction:row;">
+      <text class='rowText'>排行</text> 
+
+      <text class='rowText'>上传</text>
+
+      <text class='rowText'>歌单</text>
+    </view>
   </view>
+
+<view class='messageBoard'>
+      <scroll-view class='messageScroll' scroll-y='true'>
+        <view class='message'>
+          <text class='messageText'>机锋网覅偶未发件违反无缝无</text>
+          <view style="flex-direction:row;">
+              <text class='messageName'>name</text>
+              <image class='messageCommentIco' src='../../resources/message.png'/>
+              <text class='messageCommentNum'>60</text> 
+          </view>
+        </view>
+        
+         
+      </scroll-view>
+  </view>
+
+  <view>
+    <audio 
+     id="audio" src='http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'></audio>
+    <button  bindtap="audioPlay">播放</button>
+    
+  <navigator url="../play/play?=play" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator>
+  </view>
+    
 </view>

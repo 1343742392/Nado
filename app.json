@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/index/index"
-    
+    "pages/index/index",
+    "pages/play/play"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ebebeb",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  }
+  },
+    "workers": "workers"
 }
