@@ -51,8 +51,12 @@ App
   },
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestUrl:'https://zjxgnjyn.qcloud.la'
   },
+
+
+    
 
   play:function()
   {

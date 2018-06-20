@@ -5,7 +5,15 @@ Page
 ({
   search:function(e)
   {
-    console.log('search:' + e.detail.value);
+     wx.request({
+       url: app.globalData.requestUrl,
+       data: {
+         x: '123'
+       },
+       success: function (res) {
+         console.log(res.data)
+       }
+     })
   },
 
   toRankPage:function()

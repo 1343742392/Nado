@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/play/play",
-    "pages/rank/rank"
+    "pages/rank/rank",
+    "pages/search/search"
   ],
   "window":{
     "backgroundTextStyle":"light",
