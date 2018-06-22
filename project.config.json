@@ -1,0 +1,10 @@
+{
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx67f30e9baa28a863",
+	"projectname": "Nado",
+	"condition": {}
+}

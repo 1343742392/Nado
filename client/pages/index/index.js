@@ -6,7 +6,7 @@ Page
   search:function(e)
   {
      wx.request({
-       url: app.globalData.requestUrl,
+       url: app.globalData.requestUrl + '/search.php',
        data: {
          x: '123'
        },
@@ -26,7 +26,10 @@ Page
 
   toUploadPage:function()
   {
-
+    wx.navigateTo
+      ({
+        url: "../upload/upload?=upload",
+      })
   },
 
   toListPage:function()

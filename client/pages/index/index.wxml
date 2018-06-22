@@ -7,15 +7,11 @@
     <view style="flex-direction:row;">
       <image  class='rowImage'mode='scaleToFill' src='../../resources/rank.png' bindtap='toRankPage'></image>
 
-      <image class='rowImage'mode='scaleToFill' src='../../resources/upload.png'bindtap='toUploadPage' ></image>
-
       <image class='rowImage'mode='scaleToFill' src='../../resources/list.png' bindtap='toListPage'></image>
     </view>
 
     <view  style="flex-direction:row;">
       <text class='rowText'>排行</text> 
-
-      <text class='rowText'>上传</text>
 
       <text class='rowText'>歌单</text>
     </view>
