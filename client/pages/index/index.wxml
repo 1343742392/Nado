@@ -1,21 +1,10 @@
-<view class='background'>.
+<view class='background'>
+  <view style='height:1vh;' ></view>
+
   <view class='head'>
         <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
 
-  <view class='buttom'>
-    <view style="flex-direction:row;">
-      <image  class='rowImage'mode='scaleToFill' src='../../resources/rank.png' bindtap='toRankPage'></image>
-
-      <image class='rowImage'mode='scaleToFill' src='../../resources/list.png' bindtap='toListPage'></image>
-    </view>
-
-    <view  style="flex-direction:row;">
-      <text class='rowText'>排行</text> 
-
-      <text class='rowText'>歌单</text>
-    </view>
-  </view>
 
 <view class='messageBoard'>
       <scroll-view class='messageScroll' scroll-y='true'>
