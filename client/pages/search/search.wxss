@@ -1,1 +1,39 @@
-/* pages/search/search.wxss */
+.head
+{
+
+  height: 6vh;
+  padding-bottom: 0vh;
+  background-color: #ebebeb;
+}
+
+.search
+{  
+  height: 5vh;
+  border-bottom:0.2vh solid #c2c2c2;
+  background-color: #ebebeb;
+} 
+
+.reslutList
+{
+ height: 94vh;
+}
+
+.music
+{
+  padding: 1vh;
+  height: 4vh;
+  background-color: #0f0;
+}
+
+.musicName
+{
+  position: fixed;
+  font-size: 15px;
+}
+
+.uploadTime
+{
+  position: fixed;
+  right: 2vw;
+  font-size: 15px;
+}

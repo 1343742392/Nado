@@ -8,10 +8,18 @@ Page
      wx.request({
        url: app.globalData.requestUrl + '/search.php',
        data: {
-         x: '123'
+         name: '123'
+       },
+       header: {
+         'content-type': 'application/json' // 默认值
        },
        success: function (res) {
-         console.log(res.data)
+         console.log(res.data.name + "\n" + res.data.uploadTime);
+         app.globalData.searchReslut = res.data;
+         wx.navigateTo
+         ({
+             url: "../search/search?=search",
+         })
        }
      })
   },

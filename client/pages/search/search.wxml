@@ -1,2 +1,12 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+  <view class='head'>
+        <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
+  </view>
+  <scroll-view class='reslutList'>
+    <view class='music' bindtap='palyMusic'>
+      <view style="flex-direction:row;">
+        <text class='musicName'>{{musicName}}</text>
+        <text class='uploadTime'>{{uploadTime}}</text>
+      </view>
+      
+    </view>
+  </scroll-view>
