@@ -1,6 +1,21 @@
 //index.js
 //获取应用实例
 var app = getApp();
+
+function strToArray(str)
+{
+  var strArray = new Array();
+  var key;
+  for (var f = 0; f < str.length; f++) {
+    if (str[f] == ',') {
+      console.log('has');
+      strArray.push(str.substring(key, f));
+      key = f;
+    }
+  }
+  return strArray;
+}
+
 Page
 ({
   search:function(e)
@@ -14,8 +29,10 @@ Page
          'content-type': 'application/json' // 默认值
        },
        success: function (res) {
-         console.log(res.data.name + "\n" + res.data.uploadTime);
-         app.globalData.searchReslut = res.data;
+         
+
+         var strArray = strToArray(res.data);
+         app.globalData.searchReslut = strArray;
          wx.navigateTo
          ({
              url: "../search/search?=search",

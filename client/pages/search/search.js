@@ -15,8 +15,23 @@ Page({
   },
   
   onLoad: function (options) {
-    this.setData({ musicName : app.globalData.searchReslut.name });
-    this.setData({ uploadTime: timestampToTime(app.globalData.searchReslut.uploadTime)})
+    /*var html = 
+
+    for (var f = 0; f < Object.keys(app.globalData.searchReslut).length / 2, f ++)
+    {
+      html= html + 
+      "\
+    <view class='music" + f + "' id='' bindtap='palyMusic'>\
+      < view style= 'flex-direction:row;' >\
+        <text class='musicName' >" + app.globalData.searchReslut.name + " </text>\
+        < text class='uploadTime' >"++" </text>\
+      < /view>\
+    </view>";
+        
+    }
+    */
+    //this.setData({ musicName : app.globalData.searchReslut.name });
+    //this.setData({ uploadTime: timestampToTime(app.globalData.searchReslut.uploadTime)})
   },
 
   palyMusic:function()

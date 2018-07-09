@@ -2,11 +2,6 @@
         <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
   <scroll-view class='reslutList'>
-    <view class='music' bindtap='palyMusic'>
-      <view style="flex-direction:row;">
-        <text class='musicName'>{{musicName}}</text>
-        <text class='uploadTime'>{{uploadTime}}</text>
-      </view>
-      
-    </view>
+    
+      {{musics}}
   </scroll-view>
