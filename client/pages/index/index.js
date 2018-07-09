@@ -2,19 +2,8 @@
 //获取应用实例
 var app = getApp();
 
-function strToArray(str)
-{
-  var strArray = new Array();
-  var key;
-  for (var f = 0; f < str.length; f++) {
-    if (str[f] == ',') {
-      console.log('has');
-      strArray.push(str.substring(key, f));
-      key = f;
-    }
-  }
-  return strArray;
-}
+var tools = require('../../utils/util.js')
+
 
 Page
 ({
@@ -31,8 +20,18 @@ Page
        success: function (res) {
          
 
-         var strArray = strToArray(res.data);
-         app.globalData.searchReslut = strArray;
+         var arr = tools.strToArray(res.data);
+         var doubleArr = new Array();
+         for (var f = 0; f < arr.length / 2; f++) {
+           var value = 
+           {
+              id: f,
+              musicName: arr[f * 2],
+              uploadTime: tools.timestampToTime(arr[f * 2 + 1])
+           }
+           doubleArr.push(value);
+         }
+         app.globalData.searchReslut = doubleArr;
          wx.navigateTo
          ({
              url: "../search/search?=search",

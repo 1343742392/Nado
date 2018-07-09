@@ -1,7 +1,13 @@
   <view class='head'>
         <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
-  <scroll-view class='reslutList'>
-    
-      {{musics}}
+  <scroll-view class='reslutList' >
+
+    <view class='music'  wx:for="{{array}}" id='{{item.id}}'bindtap='palyMusic'>
+      <view style= 'flex-direction:row; ' >
+        <text class='musicName' > {{item.musicName}} </text>
+        <text class='uploadTime' > {{item.uploadTime}} </text>
+      </view>
+    </view>
+
   </scroll-view>
