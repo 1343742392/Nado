@@ -1,10 +1,4 @@
 //app.js
-const worker = wx.createWorker('workers/request/index.js');
-
-worker.onMessage(function (msg) {
-
-
-})
 
 App
 ({
@@ -19,32 +13,22 @@ App
     wx.login
     ({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res);
       }
     })
     // 获取用户信息
-    wx.getSetting
-    ({
-      success: res => 
-      {
-        if (res.authSetting['scope.userInfo']) 
-        {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo
-          ({
-            success: res => 
-            {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) 
-              {
-                this.userInfoReadyCallback(res)
+            ({
+              success: res => {
+                this.globalData.userInfo = res.userInfo
+                if (this.userInfoReadyCallback) {
+                  this.userInfoReadyCallback(res)
+                }
               }
-            }
-          })
+            })
         }
       }
     })
@@ -52,10 +36,10 @@ App
 
   globalData: {
     userInfo: null,
-    requestUrl:'https://zjxgnjyn.qcloud.la',
+    requestUrl:'https://www.xwtool.top',
     searchReslut:null,
     audioManager: wx.getBackgroundAudioManager(),
-    state:{}
+    state:{},
   },
 
 
@@ -63,7 +47,7 @@ App
 
   play:function(name)
   {
-    this.globalData.audioManager.src = this.globalData.requestUrl + '/music/' + name;
+    this.globalData.audioManager.src = this.globalData.requestUrl + '/upload/' + name;
     if (this.globalData.audioManager.paused != false)
     {
       this.globalData.audioManager.title = name;

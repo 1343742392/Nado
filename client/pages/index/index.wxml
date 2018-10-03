@@ -1,12 +1,24 @@
 <view class='background'>
-  <view style='height:1vh;' ></view>
 
   <view class='head'>
-        <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
+        <view class='row'>
+          <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
+          <button  class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >
+            <image class='face' mode='widthFix' src='{{face}}'></image>
+          </button>
+          
+        </view>
+
+
+        <view class='headButtons'>
+             <image class='headButton' mode='widthFix' src='../../resources/list.png'></image>
+             <image class='headButton' mode='widthFix' src='../../resources/rank.png'></image>
+        </view>
+     
   </view>
 
 
-<view class='messageBoard'>
+  <view class='messageBoard'>
       <scroll-view class='messageScroll' scroll-y='true'>
         <view class='message'>
           <text class='messageText'>机锋网覅偶未发件违反无缝无</text>
@@ -23,7 +35,8 @@
 
   <view class='bottom'>
     <text class='name'>歌名</text>
-    <view >
+    <view class='ctrlButton'>
+      <view class='next'></view>
       <image class='play' src='../../resources/play.png'></image>
       <image class='next' src='../../resources/next.png'></image>
     </view>

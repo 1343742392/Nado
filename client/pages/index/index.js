@@ -7,12 +7,15 @@ var tools = require('../../utils/util.js')
 
 Page
 ({
-  search:function(e)
+  data: {
+    face:'',
+  },
+  search:function(musicName)
   {
      wx.request({
        url: app.globalData.requestUrl + '/search.php',
        data: {
-         name: '123'
+         name: musicName,
        },
        header: {
          'content-type': 'application/json' // 默认值
@@ -38,6 +41,39 @@ Page
          })
        }
      })
+  },
+  onLoad:function()
+  {
+    if (app.globalData.userInfo != null)
+    {
+      this.setData({ face: app.globalData.userInfo.avatarUrl})
+    } 
+    else if (this.data.canIUse)
+    {
+      app.userInfoReadyCallback = res => {
+        console.log("run");
+        this.setData({
+          face:res.userInfo.avatarUrl
+        })
+      }
+    }
+    else {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          console.log(res.userInfo.avatarUrl);
+          this.setData({
+            face: res.userInfo.avatarUrl
+          })
+        }
+      })
+    }
+  },
+
+  getUserInfo: function (res) {
+    console.log(res);
+    app.globalData.userInfo = res.detail.userInfo
+    this.setData({ face: res.detail.userInfo.avatarUrl })
   },
 
   toRankPage:function()

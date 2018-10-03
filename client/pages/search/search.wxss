@@ -22,18 +22,22 @@
 {
   padding: 1vh;
   height: 4vh;
-  background-color: #0f0;
 }
 
+.row
+{
+  padding: 1vw;
+  flex-direction:row; 
+  display: flex;
+  justify-content: space-between;
+}
 .musicName
 {
-  position: fixed;
   font-size: 15px;
 }
 
 .uploadTime
 {
-  position: fixed;
   right: 2vw;
   font-size: 15px;
 }

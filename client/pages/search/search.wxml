@@ -1,13 +1,18 @@
+<view class='background'>
   <view class='head'>
         <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
   <scroll-view class='reslutList' >
 
-    <view class='music'  wx:for="{{array}}" id='{{item.id}}'bindtap='palyMusic'>
-      <view style= 'flex-direction:row; ' >
+    <view class='music' wx:for="{{array}}" id='{{item.id}}'bindtap='palyMusic'>
+      <view class='row' >
         <text class='musicName' > {{item.musicName}} </text>
         <text class='uploadTime' > {{item.uploadTime}} </text>
       </view>
+      <view  wx:if="{{line}}" class='divideLine'></view>
     </view>
 
+
   </scroll-view>
+</view>
+

@@ -1,15 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/play/play",
     "pages/rank/rank",
     "pages/search/search"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ebebeb",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-    "workers": "workers"
+  "workers": "workers"
 }
