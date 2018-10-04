@@ -10,35 +10,32 @@ Page
   data: {
     face:'',
   },
-  search:function(musicName)
+ search:function(e)
   {
+    console.log(e.detail.value)
      wx.request({
        url: app.globalData.requestUrl + '/search.php',
        data: {
-         name: musicName,
+         name: e.detail.value
        },
        header: {
          'content-type': 'application/json' // 默认值
        },
+       method:'get',
        success: function (res) {
-         
-
-         var arr = tools.strToArray(res.data);
-         var doubleArr = new Array();
-         for (var f = 0; f < arr.length / 2; f++) {
-           var value = 
-           {
-              id: f,
-              musicName: arr[f * 2],
-              uploadTime: tools.timestampToTime(arr[f * 2 + 1])
-           }
-           doubleArr.push(value);
+         var obj = res.data;
+         for(var f = 0; f < obj.length; f ++)
+         {
+           obj[f]['time'] = tools.timestampToTime(obj[f]['time']);
          }
-         app.globalData.searchReslut = doubleArr;
+         app.globalData.searchReslut = obj;
+
+
          wx.navigateTo
          ({
              url: "../search/search?=search",
          })
+         
        }
      })
   },

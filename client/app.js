@@ -36,7 +36,7 @@ App
 
   globalData: {
     userInfo: null,
-    requestUrl:'https://www.xwtool.top',
+    requestUrl:'https://www.xwtool.top/nado',
     searchReslut:null,
     audioManager: wx.getBackgroundAudioManager(),
     state:{},
