@@ -1,1 +1,33 @@
-<text>打开了</text>
+<view class='backgrund'>
+  <view class='head'>
+    <text>name</text>
+  </view>
+
+  <view class='mid'>
+  
+  </view>
+
+  <view class='bottom'>
+    <view class='bar'>
+        <image class='next' src='../../resources/likeBefore.png'catchtap='next'></image>
+        <image class='next' src='../../resources/abut.png'catchtap='next'></image>
+    </view>
+
+    <view class='bar'>
+
+    <text class='timeText'>00.00</text>
+
+    <slider class='slider' block-size='20' backgroundColor=''/>
+
+    <text class='timeText'>02.00</text>
+
+    </view>
+
+    <view class='ctrlButton'>
+      <image class='next' src='../../resources/before.png'catchtap='next'></image>
+      <image class='play' src='../../resources/play.png' catchtap='play'></image>
+      <image class='next' src='../../resources/next.png'catchtap='next'></image>
+    </view>
+  </view>
+   
+</view>

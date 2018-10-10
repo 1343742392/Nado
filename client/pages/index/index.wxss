@@ -25,11 +25,10 @@
 {
   width: 100vw;
   height: 9vh;
-  padding-left: 1vw;
+  padding-left: 3vw;
   display: flex;
   justify-content: center;
   align-items:center;
-  background-color: #EBEB0B;
 }
 .face
 {
@@ -44,7 +43,7 @@
 {  
   height: 5vh;
   width: 75vw;
-  border:1vh solid black;
+  border:0.8vh solid black;
 } 
  button{
 display:block;
@@ -136,23 +135,4 @@ height: 4vh;
   display: flex;
   justify-content: center;
   font-size: 15px;
-}
-.ctrlButton
-{
-  display: flex;
-  justify-content:center;
-}
-
-.play
-{
-  margin-left: 10vw;
-  margin-right: 10vw;
-  width: 6vw;
-  height: 6vw;
-}
-
-.next
-{
-  width: 6vw;
-  height: 6vw;
 }

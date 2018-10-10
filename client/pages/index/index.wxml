@@ -33,12 +33,12 @@
       </scroll-view>
   </view>
 
-  <view class='bottom'>
+  <view class='bottom' bindtap='toPlay'>
     <text class='name'>歌名</text>
     <view class='ctrlButton'>
-      <view class='next'></view>
-      <image class='play' src='../../resources/play.png'></image>
-      <image class='next' src='../../resources/next.png'></image>
+      <image class='next' src='../../resources/before.png'catchtap='next'></image>
+      <image class='play' src='../../resources/play.png' catchtap='play'></image>
+      <image class='next' src='../../resources/next.png'catchtap='next'></image>
     </view>
   </view>
     

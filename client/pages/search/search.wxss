@@ -7,7 +7,9 @@
 }
 
 .search
-{  
+{ 
+  margin-left: 2vw; 
+  width: 96vw;
   height: 5vh;
   border-bottom:0.2vh solid #c2c2c2;
   background-color: #ebebeb;
@@ -24,13 +26,7 @@
   height: 4vh;
 }
 
-.row
-{
-  padding: 1vw;
-  flex-direction:row; 
-  display: flex;
-  justify-content: space-between;
-}
+
 .musicName
 {
   width: 60vw;

@@ -14,3 +14,31 @@
   background-color:rgb(244,244,244);
   position: fixed;
 }
+
+.row
+{
+  padding: 1vw;
+  flex-direction:row; 
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctrlButton
+{
+  display: flex;
+  justify-content:center;
+}
+
+.play
+{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 6vw;
+  height: 6vw;
+}
+
+.next
+{
+  width: 6vw;
+  height: 6vw;
+}

@@ -1,0 +1,45 @@
+.head
+{
+  width: 100vw;
+  height: 15vh;
+  background-color: #f00;
+  display: flex;
+  justify-content: center;
+
+}
+
+.mid
+{
+  width: 100vw;
+  height: 65vh;
+    background-color: #00f;
+}
+
+.bar
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom
+{
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  Flex-direction:column;
+}
+
+.slider
+{
+  width: 70vw;
+  padding: 0px;
+  margin: 0px;
+  height: 5vh;
+}
+
+.timeText
+{
+  font-size: 25rpx;
+  color: #ebebeb;
+}

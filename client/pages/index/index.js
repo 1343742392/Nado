@@ -22,7 +22,11 @@ Page
          'content-type': 'application/json' // 默认值
        },
        method:'get',
-       success: function (res) {
+       success: function (res) 
+       {
+         console.log(res);
+         if ((res.data + '').match('.*err.*') || res.data == null) 
+           return;
          var obj = res.data;
          for(var f = 0; f < obj.length; f ++)
          {
@@ -93,10 +97,24 @@ Page
   {
 
   },
+  toPlay:function()
+  {
+    wx.navigateTo
+      ({
+        url: "../play/play?=play",
+      })
+  },
 
   audioPlay:function()
   {
     app.play();
-  }
-  
+  },
+  play:function()
+  {
+    console.log('play')
+  },
+  next:function()
+  {
+    console.log('next')
+  },
 })

@@ -10,7 +10,7 @@
         <text class='uploadTime' > {{item['time']}} </text>
       </view>
 
-      <view  wx:if="{{line}}" class='divideLine'></view>
+      <view  class='divideLine'></view>
     </view>
 
 
