@@ -1,29 +1,26 @@
+.music
+{
+  padding: 1vh;
+  height: 4vh;
+}
 
 
 .musicName
 {
-  
+  width: 60vw;
    font-size:28rpx;        
    overflow: hidden;    
    white-space: nowrap;    
    text-overflow:ellipsis;
 
 }
-.index
-{
-   font-size:28rpx;  
-}
 .public
 {
   font-size:20rpx;  
   color: #9d9d9d;
 }
-
-.item
+.uploadTime
 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 90vw;
-  margin-left: 5vw;
+  right: 2vw;
+  font-size: 15px;
 }

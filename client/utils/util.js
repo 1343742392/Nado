@@ -36,8 +36,28 @@ var timestampToTime = function(timestamp) {
   return Y + M + D;
 }
 
+var secondToMinute = function(second)
+{
+  if(second >= 0)
+  {
+    var secondPat = parseInt(second / 60)
+    var minute = second % 60
+    if (secondPat < 10)
+      secondPat = '0' + secondPat
+    if (minute < 10)
+      minute = '0' + minute
+    return secondPat + ':' + minute
+  }
+  else
+  {
+    return '00:00'
+  }
+
+}
+
 module.exports = {
   strToArray: strToArray,
   timestampToTime: timestampToTime,
-  formatTime: formatTime
+  formatTime: formatTime,
+  secondToMinute: secondToMinute
 }

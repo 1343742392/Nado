@@ -36,7 +36,11 @@
    text-overflow:ellipsis;
 
 }
-
+.public
+{
+  font-size:20rpx;  
+  color: #9d9d9d;
+}
 .uploadTime
 {
   right: 2vw;

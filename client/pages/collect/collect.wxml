@@ -1,0 +1,12 @@
+<view class='music'  wx:for="{{array}}" bindtap='palyMusic'>
+      <view class='row' >
+        <view style=' display:flex; flex-direction:column; '>
+            <text class='musicName' > {{item[1]}} </text>
+            <text class='public'> {{item[3]}}</text>
+        </view>
+
+      
+      </view>
+
+      <view  class='divideLine'></view>
+    </view>

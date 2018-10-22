@@ -1,4 +1,15 @@
-<!--pages/rank/rank.wxml-->
+<view wx:for='{{array}}' wx:for-index="index" >
 
-<button class='test'>1</button>
-<button class='test'>2</button>
+  <view>
+      <view class='item'>
+        <text class='index'>{{index + 1}}</text>
+        <view class='row'>
+            <text class='musicName'> {{item['name']}}</text>
+            <text class='public'>{{item['pub']}}</text> 
+        </view>
+      </view>
+      
+  </view>
+
+  <view  class='divideLine'></view>
+</view>

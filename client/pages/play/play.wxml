@@ -1,31 +1,34 @@
 <view class='backgrund'>
   <view class='head'>
-    <text>name</text>
   </view>
 
   <view class='mid'>
-  
+    <scroll-view class='lyricRoll' scroll-y = 'true'>
+      <text class='lyric'>
+      {{lyric}}
+      </text>
+    </scroll-view>
   </view>
 
   <view class='bottom'>
-    <view class='bar'>
-        <image class='next' src='../../resources/likeBefore.png'catchtap='next'></image>
-        <image class='next' src='../../resources/abut.png'catchtap='next'></image>
+    <view class='button'>
+        <image class='buttonImg' src='../../resources/{{collectIco}}.png'catchtap='collect'></image>
+        <image class='buttonImg' src='../../resources/about.png'catchtap='next'></image>
     </view>
 
     <view class='bar'>
 
-    <text class='timeText'>00.00</text>
+    <text class='timeText'>{{currentLength}}</text>
 
-    <slider class='slider' block-size='20' backgroundColor=''/>
+    <slider mix='0' max='100' value='{{sliderPosition}}' class='slider' block-size='20' activeColor='#9f9f9f80' block-color='#9f9f9f80' bindchange='barPosChange' bindchanging='barPosChanging'/>
 
-    <text class='timeText'>02.00</text>
+    <text class='timeText'>{{singLength}}</text>
 
     </view>
 
     <view class='ctrlButton'>
       <image class='next' src='../../resources/before.png'catchtap='next'></image>
-      <image class='play' src='../../resources/play.png' catchtap='play'></image>
+      <image class='play' src='../../resources/{{playState}}.png' catchtap='play'></image>
       <image class='next' src='../../resources/next.png'catchtap='next'></image>
     </view>
   </view>

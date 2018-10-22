@@ -24,11 +24,12 @@ Page({
       method: 'get',
       success: function (res) 
       {
-        if ((res.data+'').match('.*err.*'))
+        if(res.data == 'err null name')
         {
           return;
         }
         var obj = res.data;
+        console.log(res.data)
         for (var f = 0; f < obj.length; f++) {
           obj[f]['time'] = tools.timestampToTime(obj[f]['time']);
         }
@@ -46,7 +47,12 @@ Page({
 
   palyMusic:function(e)
   {
-    var name = app.globalData.searchReslut[e.currentTarget.offsetTop / 36]['name']
-    app.play(name);
+    var reslut = app.globalData.searchReslut;
+    var index = e.currentTarget.offsetTop / 36;
+    var name = reslut[index]['name'];
+    var subfix = reslut[index]['subfix'];
+    var id = reslut[index]['id']
+    app.play({'name':name, 'subfix':subfix, 'id':id});
+
   }
 })

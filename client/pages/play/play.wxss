@@ -1,24 +1,55 @@
 .head
 {
   width: 100vw;
-  height: 15vh;
-  background-color: #f00;
+  height: 5vh;
   display: flex;
   justify-content: center;
-
+  align-items: center;
 }
 
 .mid
 {
   width: 100vw;
+  height: 75vh;
+}
+
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.lyricRoll
+{
+  width: 80vw;
   height: 65vh;
-    background-color: #00f;
+  margin-left: 10vw;
+}
+
+.lyric
+{
+  font-size: 28rpx;
 }
 
 .bar
 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.button
+{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+.buttonImg
+{
+    margin-left: 6vw;
+    margin-right: 6vw;
+    width: 8vw;
+    height: 8vw;
 }
 
 .bottom
@@ -41,5 +72,7 @@
 .timeText
 {
   font-size: 25rpx;
+  margin-left: 3vw;
+  margin-right: 3vw;
   color: #ebebeb;
 }

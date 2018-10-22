@@ -11,8 +11,8 @@
 
 
         <view class='headButtons'>
-             <image class='headButton' mode='widthFix' src='../../resources/list.png'></image>
-             <image class='headButton' mode='widthFix' src='../../resources/rank.png'></image>
+             <image class='headButton' mode='widthFix' bindtap="toCollectPage" src='../../resources/list.png'></image>
+             <image class='headButton' mode='widthFix'  bindtap='toRankPage'src='../../resources/rank.png'></image>
         </view>
      
   </view>
@@ -34,10 +34,10 @@
   </view>
 
   <view class='bottom' bindtap='toPlay'>
-    <text class='name'>歌名</text>
+    <text class='name'>{{singName}}</text>
     <view class='ctrlButton'>
-      <image class='next' src='../../resources/before.png'catchtap='next'></image>
-      <image class='play' src='../../resources/play.png' catchtap='play'></image>
+      <image class='next' src='../../resources/before.png'catchtap='before'></image>
+      <image class='play' src='../../resources/{{playState}}.png' catchtap='play'></image>
       <image class='next' src='../../resources/next.png'catchtap='next'></image>
     </view>
   </view>

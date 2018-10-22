@@ -9,10 +9,11 @@ Page
 ({
   data: {
     face:'',
+    singName:'',
+    playState:'play',
   },
  search:function(e)
   {
-    console.log(e.detail.value)
      wx.request({
        url: app.globalData.requestUrl + '/search.php',
        data: {
@@ -28,10 +29,6 @@ Page
          if ((res.data + '').match('.*err.*') || res.data == null) 
            return;
          var obj = res.data;
-         for(var f = 0; f < obj.length; f ++)
-         {
-           obj[f]['time'] = tools.timestampToTime(obj[f]['time']);
-         }
          app.globalData.searchReslut = obj;
 
 
@@ -45,6 +42,8 @@ Page
   },
   onLoad:function()
   {
+
+
     if (app.globalData.userInfo != null)
     {
       this.setData({ face: app.globalData.userInfo.avatarUrl})
@@ -93,16 +92,26 @@ Page
       })
   },
 
-  toListPage:function()
+  toCollectPage:function()
   {
-
+    if (app.globalData.id != null)
+    {
+      wx.navigateTo
+        ({
+          url: "../collect/collect?=collect",
+        })
+    }
   },
   toPlay:function()
   {
-    wx.navigateTo
-      ({
-        url: "../play/play?=play",
-      })
+    if(app.globalData.singName != '')
+    {
+      wx.navigateTo
+        ({
+          url: "../play/play?=play",
+        })
+    }
+
   },
 
   audioPlay:function()
@@ -111,10 +120,80 @@ Page
   },
   play:function()
   {
-    console.log('play')
+    if(this.data.playState == 'play')
+    {
+      if(app.globalData.singList.length > 0)
+      {
+        this.setData({ playState: 'stop'});
+        app.play();
+      }
+    }
+    else
+    {
+      this.setData({ playState: 'play' })
+      app.pause()
+    }
   },
+
+  before:function()
+  {
+    var singList = app.globalData.singList;
+    //console.log(singList)
+    //console.log(app.globalData.playingInfo['id'])
+    for (var f = 0; f < singList.length; f++) {
+
+      if (singList[f]['id'] == app.globalData.playingInfo['id']) {
+
+        if (f - 1 >= 0) {
+          //console.log('play');
+          app.play(singList[f - 1]);
+          this.setData({ singName: singList[f - 1]['name'] })
+          break
+        }
+        else {
+          //没有下一首了
+        }
+      }
+    }
+  },
+
   next:function()
   {
-    console.log('next')
+    var singList = app.globalData.singList;
+    //console.log(singList)
+    //console.log(app.globalData.playingInfo['id'])
+    for(var f = 0; f < singList.length; f ++)
+    {
+      
+      if(singList[f]['id'] == app.globalData.playingInfo['id'])
+      {
+        if( f + 1 < singList.length)
+        {
+          app.play(singList[f + 1]);
+          this.setData({ singName: singList[f + 1]['name']})
+          break
+        }
+        else
+        {
+          //没有下一首了
+        }
+      }
+    }
   },
+  onShow:function()
+  {
+    if (app.globalData.audioManager.src != null)
+    {
+      this.setData({ singName: app.globalData.playingInfo['name'] })
+      if (app.globalData.audioManager.paused == true)
+      {
+        this.setData({ playState: 'play' });
+      }
+      else if (app.globalData.audioManager.paused == false)
+      {
+        this.setData({ playState: 'stop' });
+      }
+    }
+
+  }
 })

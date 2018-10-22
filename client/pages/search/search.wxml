@@ -6,7 +6,11 @@
 
     <view class='music'  wx:for="{{array}}" bindtap='palyMusic'>
       <view class='row' >
-        <text class='musicName' > {{item['name']}} </text>
+        <view style=' display:flex; flex-direction:column; '>
+            <text class='musicName' > {{item['name']}} </text>
+            <text class='public'> {{item['public']}}</text>
+        </view>
+
         <text class='uploadTime' > {{item['time']}} </text>
       </view>
 
