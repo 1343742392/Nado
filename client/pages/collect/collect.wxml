@@ -1,5 +1,7 @@
-<view class='music'  wx:for="{{array}}" bindtap='palyMusic'>
-      <view class='row' >
+
+<scroll-view>
+  <view class='music'  wx:for="{{array}}">
+      <view class='row' data-name='{{index}}' bindtap='palyMusic'  >
         <view style=' display:flex; flex-direction:column; '>
             <text class='musicName' > {{item[1]}} </text>
             <text class='public'> {{item[3]}}</text>
@@ -10,3 +12,4 @@
 
       <view  class='divideLine'></view>
     </view>
+</scroll-view>

@@ -3,17 +3,42 @@
   </view>
 
   <view class='mid'>
-    <scroll-view class='lyricRoll' scroll-y = 'true'>
+    <scroll-view class='lyricRoll' scroll-y = 'true' wx:if='{{openLyric}}'>
       <text class='lyric'>
       {{lyric}}
       </text>
     </scroll-view>
+
+    
+    <view class='musicInfo' wx:if='{{openInfo}}'>
+      <view>
+        <text class='declareText'>名字:</text>
+        <text class='infoText'>{{info['name']}}.{{info['subfix']}}</text>
+      </view>
+        <view>
+        <text class='declareText'>发布时间:</text>
+        <text class='infoText'>{{info['publicTime']}}</text>
+      </view>
+      <view>
+          <text class='declareText'>发布人:</text><text></text>
+          <text class='infoText'>{{info['public']}}</text>
+      </view>
+      <view>
+        <text class='declareText'>上传时间:</text><text></text>
+        <text class='infoText'>{{info['time']}}</text>
+      </view>
+      <view>
+        <text class='declareText'>播放量:</text><text></text>
+        <text class='infoText'>{{info['playNum']}}</text>
+      </view>
+    </view>
+
   </view>
 
   <view class='bottom'>
     <view class='button'>
         <image class='buttonImg' src='../../resources/{{collectIco}}.png'catchtap='collect'></image>
-        <image class='buttonImg' src='../../resources/about.png'catchtap='next'></image>
+        <image class='buttonImg' src='../../resources/about.png'catchtap='about'></image>
     </view>
 
     <view class='bar'>
@@ -27,7 +52,7 @@
     </view>
 
     <view class='ctrlButton'>
-      <image class='next' src='../../resources/before.png'catchtap='next'></image>
+      <image class='next' src='../../resources/before.png'catchtap='before'></image>
       <image class='play' src='../../resources/{{playState}}.png' catchtap='play'></image>
       <image class='next' src='../../resources/next.png'catchtap='next'></image>
     </view>

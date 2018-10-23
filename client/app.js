@@ -12,6 +12,7 @@ App
       state: {},
       singList: new Array(),
       playingInfo:null,
+      musicEndBacks: new Array(),
     },
   onLaunch: function () 
   {
@@ -66,25 +67,31 @@ App
 
   play: function (playingInfo)
   {
+    var manager = this.globalData.audioManager;
     if (playingInfo != undefined)
     {
       //有参数播放
       var src = this.globalData.requestUrl + '/upload/' + playingInfo['id'] + '.' + playingInfo['subfix']
-      this.globalData.audioManager.src = src;
+      manager.src = src;
       this.globalData.playingInfo = playingInfo;
-      this.globalData.audioManager.title = playingInfo['name'];
-      this.globalData.audioManager.play();
+      manager.title = playingInfo['name'];
+      manager.play();
+      manager.onEnded(this.musicEnd)
+      wx.setStorage({
+        key: 'playingInfo',
+        data: playingInfo,
+      })
     }
     else
     {
-      if (this.globalData.audioManager.src == '')
+      if (manager.src == '' || manager.src == undefined)
       {
         var info = this.globalData.playingInfo;
         var src = this.globalData.requestUrl + '/upload/' + info['id'] + '.' + info['subfix']
-        this.globalData.audioManager.src = src;
-        this.globalData.audioManager.title = info['name'];
+        manager.src = src;
+        manager.title = info['name'];
       }
-      this.globalData.audioManager.play();
+      manager.play();
     }
   },
 
@@ -98,7 +105,18 @@ App
   {
     var singList = this.globalData.singList;
     //console.log(singList)
-    //console.log(app.globalData.playingInfo['id'])
+    //console.log(this.globalData.playingInfo['id'])
+    wx.request({
+      url: this.globalData.requestUrl + '/playEnd.php',
+      data: { id: this.globalData.playingInfo['id']},
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+
+      method: 'post',
+
+      success: function (res) {
+        console.log(res)
+      }
+    })
     for (var f = 0; f < singList.length; f++) {
 
       if (singList[f]['id'] == this.globalData.playingInfo['id']) {
@@ -113,5 +131,18 @@ App
         }
       }
     }
+
+    var backs = this.globalData.musicEndBacks;
+    if (backs != null)
+    {
+      for (var f = 0; f < backs.length; f ++ )
+      {
+        backs[f]();
+      }
+    }
+  },
+
+  addMusicEndBack: function (func) {
+    this.globalData.musicEndBacks.push(func);
   }
 })

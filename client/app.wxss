@@ -6,13 +6,18 @@
   background: #ebebeb;
 }
 
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
 
 .divideLine
 {
   height:0.2vh;
   width:96vw;
   background-color:rgb(244,244,244);
-  position: fixed;
 }
 
 .row

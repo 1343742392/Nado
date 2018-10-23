@@ -19,6 +19,26 @@ height: 0;
 color: transparent;
 }
 
+.musicInfo
+{
+  display: flex;
+  flex-direction: column;
+  padding-left: 8vw;
+}
+
+.declareText
+{
+  font-size: 28rpx;
+  margin-right: 2vw;
+}
+
+.infoText
+{
+  width: 80vw;
+  font-size: 28rpx;
+  color: #5b5b5b;
+}
+
 .lyricRoll
 {
   width: 80vw;

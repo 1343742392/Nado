@@ -1,15 +1,15 @@
 <view wx:for='{{array}}' wx:for-index="index" >
 
   <view>
-      <view class='item'>
+      <view class='item' data-name='{{index}}' bindtap='playMusic' >
         <text class='index'>{{index + 1}}</text>
-        <view class='row'>
+        <view class='nameAndPub'>
             <text class='musicName'> {{item['name']}}</text>
-            <text class='public'>{{item['pub']}}</text> 
+            <text class='public'>{{item['public']}}</text> 
         </view>
       </view>
       
   </view>
 
-  <view  class='divideLine'></view>
+  <view  class='line'></view>
 </view>

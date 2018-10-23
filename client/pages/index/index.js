@@ -42,8 +42,6 @@ Page
   },
   onLoad:function()
   {
-
-
     if (app.globalData.userInfo != null)
     {
       this.setData({ face: app.globalData.userInfo.avatarUrl})
@@ -68,6 +66,22 @@ Page
         }
       })
     }
+    var obj = this
+    wx.getStorage
+      ({
+        key: 'playingInfo',
+        success: function (res) {
+          app.globalData.playingInfo = res.data
+          obj.setData({ singName: app.globalData.playingInfo['name'] })
+        },
+      })
+
+    app.addMusicEndBack(function()
+      {
+        console.log('run')
+        obj.setData({ singName: app.globalData.playingInfo['name'] })
+      }
+    )
   },
 
   getUserInfo: function (res) {
@@ -104,7 +118,7 @@ Page
   },
   toPlay:function()
   {
-    if(app.globalData.singName != '')
+    if (app.globalData.playingInfo != null)
     {
       wx.navigateTo
         ({
@@ -122,7 +136,7 @@ Page
   {
     if(this.data.playState == 'play')
     {
-      if(app.globalData.singList.length > 0)
+      if(app.globalData.playingInfo != null)
       {
         this.setData({ playState: 'stop'});
         app.play();
@@ -155,6 +169,8 @@ Page
         }
       }
     }
+
+
   },
 
   next:function()

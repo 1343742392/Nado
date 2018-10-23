@@ -1,4 +1,9 @@
-// pages/rank/rank.js
+
+var app = getApp();
+
+var tools = require('../../utils/util.js')
+
+
 Page({
 
   /**
@@ -13,55 +18,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var obj = this
+    wx.request({
+      url: app.globalData.requestUrl + '/rank.php',
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        console.log(res);
+        obj.setData({array:res.data})
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+  playMusic:function(e)
+  {
+    var array = this.data.array;
+    var index = e.currentTarget.dataset.name;
+    var name = array[index]['name'];
+    var subfix = array[index]['subfix'];
+    var id = array[index]['id']
+    app.play({ 'name': name, 'subfix': subfix, 'id': id });
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+    var sing = {};
+    var singlist = [];
+    for (var f = 0; f < array.length; f++) {
+      sing['id'] = array[f]['id'];
+      sing['name'] = array[f]['name'];
+      sing['subfix'] = array[f]['subfix'];
+      singlist.push(sing);
+      sing = {};
+    }
+    //console.log(singlist)
+    app.globalData.singList = singlist;
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

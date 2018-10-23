@@ -48,11 +48,13 @@ Page({
   palyMusic:function(e)
   {
     var reslut = app.globalData.searchReslut;
-    var index = e.currentTarget.offsetTop / 36;
+    var index = e.currentTarget.dataset.name ;
     var name = reslut[index]['name'];
     var subfix = reslut[index]['subfix'];
     var id = reslut[index]['id']
     app.play({'name':name, 'subfix':subfix, 'id':id});
 
-  }
+  },
+
+
 })

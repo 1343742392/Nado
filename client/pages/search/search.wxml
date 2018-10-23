@@ -2,9 +2,9 @@
   <view class='head'>
         <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
   </view>
-  <scroll-view class='reslutList' >
+  <scroll-view scroll-y class='reslutList' >
 
-    <view class='music'  wx:for="{{array}}" bindtap='palyMusic'>
+    <view class='music'  wx:for="{{array}}" data-name='{{index}}' bindtap='palyMusic'>
       <view class='row' >
         <view style=' display:flex; flex-direction:column; '>
             <text class='musicName' > {{item['name']}} </text>

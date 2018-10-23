@@ -1,6 +1,6 @@
 .music
 {
-  padding: 1vh;
+  padding: 2vw;
   height: 4vh;
 }
 
