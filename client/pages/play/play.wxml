@@ -5,7 +5,7 @@
   <view class='mid'>
     <scroll-view class='lyricRoll' scroll-y = 'true' wx:if='{{openLyric}}'>
       <text class='lyric'>
-      {{lyric}}
+      {{info['lyric']}}
       </text>
     </scroll-view>
 

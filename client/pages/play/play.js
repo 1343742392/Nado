@@ -121,7 +121,6 @@ Page
 
     before: function () {
       var obj = this
-      this.setData({ playState: 'stop' })
       var singList = app.globalData.singList;
       //console.log(singList)
       //console.log(app.globalData.playingInfo['id'])
@@ -133,6 +132,7 @@ Page
             //console.log('play');
             app.play(singList[f - 1]);
             this.setData({ singName: singList[f - 1]['name'] })
+            this.setData({ playState: 'stop' })
             break
           }
           else {
@@ -145,7 +145,7 @@ Page
 
     next: function () {
 
-      this.setData({ playState: 'stop' })
+ 
       var singList = app.globalData.singList;
       //console.log(singList)
       //console.log(app.globalData.playingInfo['id'])
@@ -155,6 +155,7 @@ Page
           if (f + 1 < singList.length) {
             app.play(singList[f + 1]);
             this.setData({ singName: singList[f + 1]['name'] })
+            this.setData({ playState: 'stop' })
             break
           }
           else {
@@ -211,6 +212,7 @@ Page
         responseType: 'text',
         success: function (res) {
           obj.setData({ info: res.data })
+          
         }
       })
     }

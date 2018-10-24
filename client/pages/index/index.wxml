@@ -19,7 +19,7 @@
 
 
   <view class='messageBoard'>
-      <scroll-view class='messageScroll' scroll-y='true'>
+     <!-- <scroll-view class='messageScroll' scroll-y='true'>
         <view class='message'>
           <text class='messageText'>机锋网覅偶未发件违反无缝无</text>
           <view style="flex-direction:row;">
@@ -31,6 +31,7 @@
         
          
       </scroll-view>
+      -->
   </view>
 
   <view class='bottom' bindtap='toPlay'>
