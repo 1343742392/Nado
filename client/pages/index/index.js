@@ -25,7 +25,6 @@ Page
        method:'get',
        success: function (res) 
        {
-         console.log(res);
          if ((res.data + '').match('.*err.*') || res.data == null) 
            return;
          var obj = res.data;
@@ -59,7 +58,7 @@ Page
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          console.log(res.userInfo.avatarUrl);
+          //console.log(res.userInfo.avatarUrl);
           this.setData({
             face: res.userInfo.avatarUrl
           })

@@ -21,9 +21,9 @@
   margin-right: 10vw;
 }
 
-.row
+.searchRow
 {
-  width: 91.5vw;
+  width: 90vw;
   height: 10vh;
   padding: 4vw;
   display: flex;
@@ -41,7 +41,7 @@
 .search
 {  
   height: 5vh;
-  width: 75vw;
+  width: 90vw;
   border:0.8vh solid black;
 } 
  button{
@@ -134,4 +134,7 @@ height: 4vh;
   display: flex;
   justify-content: center;
   font-size: 15px;
+     overflow: hidden;    
+   white-space: nowrap;    
+   text-overflow:ellipsis;
 }

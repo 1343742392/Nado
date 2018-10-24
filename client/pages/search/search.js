@@ -29,10 +29,6 @@ Page({
           return;
         }
         var obj = res.data;
-        console.log(res.data)
-        for (var f = 0; f < obj.length; f++) {
-          obj[f]['time'] = tools.timestampToTime(obj[f]['time']);
-        }
         app.globalData.searchReslut = obj;
 
         self.setData({ array: obj});

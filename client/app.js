@@ -6,7 +6,7 @@ App
     globalData: {
       id:null,
       userInfo: null,
-      requestUrl: 'http://127.0.0.1/nado',
+      requestUrl: 'https://www.xwtool.top/nado/',
       searchReslut: null,
       audioManager: wx.getBackgroundAudioManager(),
       state: {},
@@ -27,7 +27,7 @@ App
       success: res => {
 
         var userCode = res.code
-        console.log(userCode)
+        //console.log(userCode)
         var obj = this
         wx.request({
           url: this.globalData.requestUrl + '/login.php',
@@ -114,7 +114,7 @@ App
       method: 'post',
 
       success: function (res) {
-        console.log(res)
+        //console.log(res)
       }
     })
     for (var f = 0; f < singList.length; f++) {

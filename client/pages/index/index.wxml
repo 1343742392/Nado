@@ -1,11 +1,15 @@
 <view class='background'>
 
   <view class='head'>
-        <view class='row'>
+        <view class='searchRow'>
           <input class='search'  placeholder="搜索" confirm-type='search' bindconfirm='search'>              </input>
-          <button  class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >
+          <!--
+                    <button  class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo" >
             <image class='face' mode='widthFix' src='{{face}}'></image>
-          </button>
+                  </button>
+          -->
+
+    
           
         </view>
 
